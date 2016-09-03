@@ -1,5 +1,5 @@
 # created date 2016-8-30
-
+# set the Sample Database to Utf-8 unicode collation  and update world.country set name='Réunion' where world.country.Code='REU'
 import io
 
 import mysql.connector
