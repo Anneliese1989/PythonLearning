@@ -1,4 +1,5 @@
 # created date 2016-8-30
+
 import io
 
 import mysql.connector
@@ -8,9 +9,13 @@ def connect():
     #""" Connect to MySQL database """
     try:
         conn = mysql.connector.connect(host='localhost',
+                                       database='testschema',
+                                       user='root',
+                                       password='115100jjc')
+        conn = mysql.connector.connect(host='localhost',
                                        database='world',
                                        user='root',
-                                       password='********')
+                                       password='115100jjc')
         if conn.is_connected():
             print('Connected to MySQL database\n')
             curosor=conn.cursor()
@@ -19,16 +24,20 @@ def connect():
             #hire_end = datetime.date(1999, 12, 31)
             curosor.execute(query)
             
-            for Code,Name,Continent,Region in curosor:
-                print Code,Name,Continent,Region
-    
-    except errorcode as e:
+            for  Code,Name,Continent,Region in curosor:
+                #print  Code,Name,Continent,Region
+                if "REU" in  repr(Code):
+                     print  Code,Name,Continent,Region
+                    #print repr(Code),repr(Name),repr(Continent),repr(Region)
+                    #print repr(Code).decode("utf-8"),repr(Name).decode("utf-8"),repr(Continent).decode("utf-8"),repr(Region).decode("utf-8")
+                    #print repr(Code).encode("utf-8"),repr(Name).encode("utf-8"),repr(Continent).encode("utf-8"),repr(Region).encode("utf-8")
+                    
+    except Error as e:
         print(e)
  
     finally:
         conn.close()
  
+ 
 if __name__ == '__main__':
     connect()
- 
-  
