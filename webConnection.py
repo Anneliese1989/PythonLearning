@@ -22,7 +22,10 @@ class ConItnt:
 
 	def conn(self):
 		try:
-			with urlopen("http://stackoverflow.com/questions/5685406/inconsistent-use-of-tabs-and-spaces-in-indentation",timeout=10) as target:
+			with urlopen(
+				"http://stackoverflow.com/questions/5685406/inconsistent-use-of-tabs-and-spaces-in-indentation",
+				timeout=10)
+				as target:
 				for t in target:
 					print(t)
 			
