@@ -1,5 +1,8 @@
-# Created Date 2016-9-6 22:10
-# Random 
+# Created Date : 2016-9-6 22:10
+# Author       : Anneliese
+#
+# Description  : gift give away
+#
 
 import  os
 import  random
@@ -19,7 +22,10 @@ for index in  list:
     ran+=[index]
 ran.sort()
 ran.reverse()
+result=open("result.txt","wb")
+result=open("result.txt","ab")
 for index in  ran:
-    print("随机数：{0:<20} 肥宅：{1:<20}".format(index,list[index]))
-
-    #void* data -- 'data' is a pointer to data of unknown type, and cannot be dereferenced
+    print("随机数：{0:<25} 肥宅：{1:<20}".format(index,list[index]).strip())
+    text=(("随机数：{0:<25} 肥宅：{1:<20}".format(index,list[index]).strip())+"\n").encode("utf-8")
+    result.write(text)
+result.close()
