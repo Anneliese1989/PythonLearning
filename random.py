@@ -7,10 +7,13 @@ from    io  import  *
 from    collections import  *
 from    random  import  random
 
-file=open("paticipators.txt")
+file=open("paticipators.txt",encoding="utf-8")
 list={}
 for x in file.readlines():
+    if  ''== x.strip():
+        continue
     list[random()]=x
+
 ran=[]
 for index in  list:
     ran+=[index]
