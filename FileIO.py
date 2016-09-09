@@ -23,7 +23,7 @@ class FileIO(object):
     def FileIO2(cls,filenames,lines):
         try:
            file=open(filenames,"wb")
-           #file=open(filenames,"ab")
+          
            for x in range(10):
                file.writelines(lines)
                

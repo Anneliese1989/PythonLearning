@@ -1,6 +1,17 @@
-import io
-from io import open
-
-result=open("test.txt","wb")
-result.write("this is a line".encode("utf-8"))
-result.close()
+import urllib2    
+import urllib  
+  
+data = {}  
+  
+data['name'] = 'WHY'    
+data['location'] = 'SDU'    
+data['language'] = 'Python'  
+  
+url_values = urllib.urlencode(data)    
+print(url_values)  
+  
+name=Somebody+Here&language=Python&location=Northampton    
+url = 'http://www.example.com/example.cgi'    
+full_url = url + '?' + url_values  
+  
+data = urllib2.open(full_url)    
