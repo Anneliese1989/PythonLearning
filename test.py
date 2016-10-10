@@ -24,6 +24,9 @@ with urllib.request.urlopen('https://docs.python.org/3.5/howto/regex.html') as f
     result=open("B.txt","wb")
     result=open("B.txt","ab")
 
+    slidebar=open("slidebar.txt","wb")
+    slidebar=open("slidebar.txt","ab")
+
     if  m:
         for x   in  m:
             print("found: "+x+"\n")
@@ -34,10 +37,13 @@ with urllib.request.urlopen('https://docs.python.org/3.5/howto/regex.html') as f
     if  n:
         for x   in  n:
             print("found: "+x+"\n")
+            if  "sidebar.js"    in  x:
+                urllib.request.urlopen("https://docs.python.org/3.5/howto/_static/sidebar.js"+)
+
             result.write((x+"\n").encode("utf-8"))
     else:
         print("not found")
 
     result.close()
-
+    slidebar.close()
      
