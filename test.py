@@ -1,3 +1,6 @@
+#internet crawler
+#2016-10-10
+
 import  re
 import  os
 import  random
@@ -27,7 +30,7 @@ with urllib.request.urlopen('https://docs.python.org/3.5/howto/regex.html') as f
             result.write((x+"\n").encode("utf-8"))
     else:
         print("not found")
-        
+
     if  n:
         for x   in  n:
             print("found: "+x+"\n")
